@@ -23,7 +23,7 @@ def get_ints_between_roots(roots: Tuple[Optional[float], Optional[float]]) -> in
     x1, x2 = roots
     if x1 is None or x2 is None or x1 == x2:
         return 0
-    if max(x1, x2) == x1:
+    if x1 > x2:
         x1 = ceil(x1)
         x2 = floor(x2)
     else:
