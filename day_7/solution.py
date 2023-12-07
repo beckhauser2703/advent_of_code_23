@@ -173,7 +173,7 @@ def solution_part_2(input: str) -> None:
     print(sum([(idx+1)*hand.bid for idx, hand in enumerate(hand_list)]))
 
 
-# with open(r'day_7\puzzle_input.txt', 'r') as input:
-#     solution_part_1(input.read())
+with open(r'day_7\puzzle_input.txt', 'r') as input:
+    solution_part_1(input.read())
 with open(r'day_7\puzzle_input.txt', 'r') as input:
     solution_part_2(input.read())
