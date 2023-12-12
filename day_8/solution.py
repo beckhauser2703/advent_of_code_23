@@ -1,7 +1,8 @@
 from typing import List, Tuple, Dict
 
+NetworkDict = Dict[str, List[str]]
 
-def parse_input(input: str) -> Tuple[str, Dict[str, List[str]]]:
+def parse_input(input: str) -> Tuple[str, NetworkDict]:
     split_input = input.split("\n")
     network_dictionary = {}
     instructions = split_input[0]
@@ -13,7 +14,7 @@ def parse_input(input: str) -> Tuple[str, Dict[str, List[str]]]:
     return instructions, network_dictionary
 
 
-def number_of_steps_until_endpoints(current_node: str, endpoints: List[str], directions: str, network: Dict[str, List[str]]):
+def number_of_steps_until_endpoints(current_node: str, endpoints: List[str], directions: str, network: NetworkDict):
     counter = 0
     while (current_node not in endpoints):
         counter += 1
