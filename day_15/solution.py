@@ -32,10 +32,10 @@ class Lens:
 
 def parse_instruction_and_lens(instruction_and_lens: str) -> Tuple[str, Lens]:
     if '-' in instruction_and_lens:
-        label, amount = instruction_and_lens.split("-")
+        label, focal_length = instruction_and_lens.split("-")
         return ('-', Lens(label, 0))
-    label, amount = instruction_and_lens.split("=")
-    return ('=', Lens(label, int(amount)))
+    label, focal_length = instruction_and_lens.split("=")
+    return ('=', Lens(label, int(focal_length)))
 
 
 def solution_part_2(input: str) -> None:
