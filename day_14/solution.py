@@ -49,6 +49,7 @@ def cycle_grid(grid: Grid) -> None:
 def solution_part_2(input: str) -> None:
     split_input = np.array([[char for char in line]
                            for line in input.split("\n")])
+    #tortoise hare if there is a cycle and exploit it if there is
     tortoise_counter = 1
     hare_counter = 2
     tortoise = split_input.copy()
