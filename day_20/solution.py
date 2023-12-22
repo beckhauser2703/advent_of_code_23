@@ -206,6 +206,7 @@ def get_cycle_length(module_name: str, input: str) -> int:
 def solution_part_2(input: str) -> None:
     #turns out using graphviz rx is basically counting when cycles
     #the nodes seem to get turned on and only turn off when the cycle completes
+    #TODO: reimplement conjunctions with hashmaps
     from math import lcm
     mj_nodes = ['js', 'pc', 'pz', 'lr', 'xn', 'mf', 'mr', 'qm']
     qs_nodes = ['qc', 'hh', 'tp', 'xq', 'ks', 'hf', 'nd']
