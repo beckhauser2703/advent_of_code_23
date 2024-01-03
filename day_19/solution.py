@@ -106,8 +106,6 @@ def solve_part_2(min_max_dict: Dict[str, List[int]], current_workflow: str,
             continue
         if rule.inequality == 'gt':
             tmp_dict = deepcopy(min_max_dict)
-            if rule.category_char is None:
-                continue
             #gt branch
             current_min_in_category = tmp_dict[rule.category_char][0]
             tmp_dict[rule.category_char][0] = max([current_min_in_category, rule.number + 1])
@@ -117,8 +115,6 @@ def solve_part_2(min_max_dict: Dict[str, List[int]], current_workflow: str,
             min_max_dict[rule.category_char][1] = min(rule.number, current_max_in_category)
         elif rule.inequality == 'lt':
             tmp_dict = deepcopy(min_max_dict)
-            if rule.category_char is None:
-                continue
             #lt branch
             current_min_in_category = tmp_dict[rule.category_char][1]
             tmp_dict[rule.category_char][1] = min([current_min_in_category, rule.number - 1])
