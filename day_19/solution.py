@@ -116,12 +116,12 @@ def solve_part_2(min_max_dict: Dict[str, List[int]], current_workflow: str,
         elif rule.inequality == 'lt':
             tmp_dict = deepcopy(min_max_dict)
             #lt branch
-            current_min_in_category = tmp_dict[rule.category_char][1]
-            tmp_dict[rule.category_char][1] = min([current_min_in_category, rule.number - 1])
+            current_max_in_category = tmp_dict[rule.category_char][1]
+            tmp_dict[rule.category_char][1] = min([current_max_in_category, rule.number - 1])
             min_max_dicts_list.extend(solve_part_2(tmp_dict, rule.destination, from_workflow_to_rules))
             #gt branch
-            current_max_in_category = min_max_dict[rule.category_char][0]
-            min_max_dict[rule.category_char][0] = max(rule.number, current_max_in_category)
+            current_min_in_category = min_max_dict[rule.category_char][0]
+            min_max_dict[rule.category_char][0] = max(rule.number, current_min_in_category)
     return min_max_dicts_list
 
 
